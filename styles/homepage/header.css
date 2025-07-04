@@ -1,0 +1,173 @@
+
+.header{
+  display: flex;
+  align-items: center;
+  /* background-color: black; */
+}
+@media (max-width:1700px) {
+  
+  .header-right{
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
+@media(min-width:1700px){
+  .header{
+    justify-content: space-between;
+  }
+}
+
+
+.spotify-logo{
+  width: 32px;
+}
+
+.home-button{
+  margin-left: 8px;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  background-color: #272727;
+}
+.home-logo{
+  width: 24px;
+}
+.header-middle{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+
+.search-bar{
+  margin-left: 10px;
+  position: relative;
+  
+}
+
+.search-bar-input{
+  padding: 12px 80px 12px 35px;
+  
+  border-radius: 17px;
+  font-size: 15px;
+  background-color:#272727 ;
+  border: none;
+  flex-shrink: 1;
+}
+@media (min-width:1200px) {
+  .search-bar-input{
+    width: 350px;
+  }
+}
+@media (max-width:1200px) {
+  .search-bar-input{
+    flex:1;
+    flex-shrink: 2;
+  }
+}
+
+.search-logo{
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.spotify-logo:hover,.search-logo:hover,.browse-logo:hover{
+  cursor: pointer;
+}
+
+.browse{
+  display: flex;
+  position: absolute;
+  right: 15px;
+  top:10px;
+}
+.verticle-line{
+  width: 1px;
+  background-color:rgb(179, 170, 170) ;
+  margin-right: 10px;
+}
+.browse-logo{
+  width: 20px;
+}
+
+.header-right{
+  display: flex;
+  align-items: center;
+}
+
+.header-right-div{
+  font-weight:bold;
+  
+  background-color: transparent;
+  border:none;
+  color: rgb(179, 170, 170);
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.zoom{
+  transition: transform 0.15s ease-in-out,
+  color 0.15s;
+}
+
+.zoom:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  color: white;
+}
+
+.install-div:hover{
+  transform: scale(1.05);
+}
+.install-div:hover .install-app{
+  color: white;
+}
+.install-div:hover .install-logo{
+  filter: invert(1);
+}
+
+
+.header-right-verticle-line{
+  margin-left: 15px;
+  margin-right: 25px;
+  height: 25px;
+  width: 2px;
+  background-color: white;
+}
+.install-div{
+  display: flex;
+  align-items: center;
+  
+  font-size: 13px;
+}
+.install-logo{
+  width: 13px;
+  margin-right: 5px;
+}
+
+.browse-logo,.home-logo,.search-logo,.install-logo {
+  filter: invert(0.7);
+}
+.spotify-logo{
+  filter: invert(1);
+}
+
+.account{
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+.sign-up{
+  font-size: 15px;
+  margin-right: 20px;
+}
+.log-in{
+  font-size: 13px;
+  background-color: white;
+  color: black;
+  padding: 15px 35px;
+  border-radius: 25px;
+}
+

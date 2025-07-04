@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="styles/homepage.css">
+  <link rel="stylesheet" href="styles/homepage/header.css">
+  <link rel="stylesheet" href="styles/utils/common.css">
+  <link rel="stylesheet" href="styles/homepage/sidebar.css">
+  <link rel="stylesheet" href="styles/homepage/main-content/trending-songs.css">
+</head>
+<body>
+  <section class="header">
+    <div class="header-left">
+      <img class="spotify-logo" src="svg/logo.svg" alt="">
+    </div>
+    <div class="header-middle">
+      <button class="home-button" >
+        <img class="home-logo" src="svg/home.svg" alt="">
+      </button>
+      <div class="search-bar">
+        <img class="search-logo" src="svg/search.svg" alt="">
+        <input class="search-bar-input" type="text" placeholder="What do you want to play?">
+        <div class="browse">
+          <div class="verticle-line"></div>
+          <img class="browse-logo" src="svg/browse.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="header-right-div zoom" >Premium</button>
+      <button class="header-right-div zoom">Support</button>
+      <button class="header-right-div zoom">Download</button>
+      <div class="verticle-line header-right-verticle-line"></div>
+      <div class=" install-div">
+        <img class="install-logo" src="svg/install.svg" alt="">
+        <button class="header-right-div install-app">Install App</button>
+      </div>
+      <div class="account">
+        <button class="header-right-div sign-up zoom">Sign up</button>
+        <button class="header-right-div log-in zoom">Log in</button>
+      </div>
+    </div>
+  </section>
+  <div class="content">
+    <section class="sidebar">
+      <div class="library">
+        <div class="library-text" >Your Library</div>
+        <div class="add">&#43;</div>
+      </div>
+      <div class="create-playlist">
+        <p class="create-playlist-text1">Create your first playlist</p>
+        <p class="create-playlist-text2">It's easy,we'll help you</p>
+        <button>Create playlist</button>
+      </div>
+      <div class="browse-podcasts">
+        <p class="browse-podcasts-text1">Let's find some podcasts to follow</p>
+        <p class="browse-podcasts-text2">We'll keep you updated on new episode</p>
+        <button> Browse podcasts</button>
+      </div>
+      
+    </section>
+    <section class="homepage-content">
+      <div class="trending-songs">
+        <h1>Trending songs</h1>
+        <main class="trending-songs-main js-trending-songs-main">
+          
+        </main>
+      </div>
+    </section>
+  </div>
+  <script type="module" src="script/homepage.js"></script>
+</body>
+</html>

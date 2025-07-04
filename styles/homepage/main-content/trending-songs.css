@@ -1,0 +1,29 @@
+
+.trending-songs{
+  padding-left: 30px;
+  padding-top: 50px ;
+}
+
+.trending-songs h1{
+  margin-bottom: 20px;
+}
+
+.trending-song{
+  
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+.trending-song:hover{
+  background-color: #272727;
+}
+.trending-songs-main{
+  
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  column-gap: 20px;
+}
+
+.trending-song img{
+  width: 200px;
+  border-radius: 10px;
+}
