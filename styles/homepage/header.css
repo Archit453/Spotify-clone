@@ -2,19 +2,25 @@
 .header{
   display: flex;
   align-items: center;
-  /* background-color: black; */
+  /* position: fixed;
+  z-index: 100;;
+  background-color: black; */
 }
 @media (max-width:1700px) {
   
   .header-right{
     flex: 1;
     justify-content: flex-end;
+  };
+  .header-middle{
+    margin-left:10px ;
   }
 }
 @media(min-width:1700px){
   .header{
     justify-content: space-between;
   }
+ 
 }
 
 
@@ -35,7 +41,7 @@
 .header-middle{
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 500px;
 }
 
 
