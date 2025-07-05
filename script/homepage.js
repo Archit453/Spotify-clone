@@ -5,11 +5,11 @@ let songHTML = ``;
 trendingSong.forEach((eachSong) => {
   
   songHTML += `
-  <div class="trending-song">
+  <div class="trending-song song-${eachSong.id}">
     <img src="${eachSong.img}" alt="${eachSong.songName}">
     <p class='song-name'>${eachSong.songName}</p>
     <p class='artist-name'>${eachSong.artistName}</p>
-    <button class='play-button js-play-button'><img style="width: 24px;" class='green-play-logo' src="svg/green-play.svg" alt=""></button>
+    <button class='play-button js-play-button js-play-song ' data-song-id="${eachSong.id}"><img style="width: 24px;" class='green-play-logo' src="svg/green-play.svg" alt=""></button>
   </div>
 `
 })
@@ -26,4 +26,5 @@ trendingSong.forEach((eachSong) => {
 
 document.querySelector('.js-trending-songs-main')
 .innerHTML = songHTML;
+
 
