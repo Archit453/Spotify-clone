@@ -114,3 +114,17 @@ function updatePlayPauseButton(isPlaying) {
   playPause.classList.toggle('fa-play', !isPlaying);
   playPause.classList.toggle('fa-pause', isPlaying);
 }
+
+window.addEventListener('DOMContentLoaded', async () => {
+  const queue = getAudioQueue();
+  const index = getCurrentIndex();
+
+  if (queue.length > 0 && queue[index]) {
+    const song = queue[index];
+    audio1 = new Audio(song.audio);
+    isPlaying = false;
+    updatePlayPauseButton(false);
+    updateSongInfo(song);
+    console.log(`Loaded from localStorage: ${song.songName}`);
+  }
+});

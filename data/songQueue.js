@@ -1,5 +1,6 @@
-let audioQueue = [];
-let currentIndex = -1;
+export let audioQueue = JSON.parse(localStorage.getItem('audioQueue')) || [];
+let currentIndex = parseInt(localStorage.getItem('currentIndex')) || 0;
+
 
 export function updateAudioQueue(song) {
   const existingIndex = audioQueue.findIndex(s => s.id === song.id);
@@ -10,6 +11,8 @@ export function updateAudioQueue(song) {
     audioQueue.push(song);
     currentIndex = audioQueue.length - 1;
   }
+  localStorage.setItem('audioQueue', JSON.stringify(audioQueue));
+  localStorage.setItem('currentIndex', currentIndex);
 }
 
 export function getAudioQueue() {
@@ -22,7 +25,9 @@ export function getCurrentIndex() {
 
 export function setCurrentIndex(index) {
   currentIndex = index;
+  localStorage.setItem('currentIndex', index);
 }
+
 
 
 /*
