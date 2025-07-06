@@ -21,15 +21,40 @@
 }
 .trending-songs-main{
   display: grid;
-  grid-template-columns: repeat(8,1fr);
+  
   column-gap: 18px;
   row-gap: 20px;
 }
-/* @media (min-width:2300px){
+@media (min-width:2000px){
   .trending-songs-main{
     grid-template-columns: repeat(8,1fr);
   }
-} */
+}
+@media (max-width:2000px){
+  .trending-songs-main{
+    grid-template-columns: repeat(7,1fr);
+  }
+}
+@media (max-width:1700px){
+  .trending-songs-main{
+    grid-template-columns: repeat(6,1fr);
+  }
+}
+@media (max-width:1500px){
+  .trending-songs-main{
+    grid-template-columns: repeat(5,1fr);
+  }
+}
+@media (max-width:1300px){
+  .trending-songs-main{
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+@media (max-width:1100px){
+  .trending-songs-main{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
 
 
 

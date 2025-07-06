@@ -41,7 +41,7 @@
 .header-middle{
   display: flex;
   align-items: center;
-  margin-left: 500px;
+  margin-left: 130px;
 }
 
 
@@ -60,12 +60,12 @@
   border: none;
   flex-shrink: 1;
 }
-@media (min-width:1200px) {
+@media (min-width:1300px) {
   .search-bar-input{
     width: 350px;
   }
 }
-@media (max-width:1200px) {
+@media (max-width:1300px) {
   .search-bar-input{
     flex:1;
     flex-shrink: 2;
