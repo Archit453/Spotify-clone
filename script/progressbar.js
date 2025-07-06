@@ -52,7 +52,7 @@ export function updateTimeDisplay(audio1) {
 
   updateAudioCurrentTimeHtml(currentTimeFormatted);
   
-  console.log(`Current time: ${currentTimeFormatted} / ${durationFormatted}`);
+  // console.log(`Current time: ${currentTimeFormatted} / ${durationFormatted}`);
 }
 
 function updateAudioDurationHtml(formatted){

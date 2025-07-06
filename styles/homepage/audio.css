@@ -163,3 +163,7 @@ i:hover{
 i:hover{
   cursor: pointer;
 }
+
+.progress-bar {
+  cursor: pointer;
+}

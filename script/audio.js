@@ -2,7 +2,7 @@ import { trendingSong } from "../data/trendingSongs.js";
 import {updateAudioQueue,getAudioQueue,getCurrentIndex,setCurrentIndex} from "../data/songQueue.js";
 import { updateSongInfo } from "./updateSongAtInfo.js";
 import {getTime,updateTimeDisplay} from "./progressbar.js";
-
+import { changeVolume } from "./volumebar.js";
 
 
 
@@ -13,6 +13,7 @@ const playPause = document.querySelector('.js-play-pause');
 const backwardButton = document.querySelector('.js-backward');
 const forwardButton = document.querySelector('.js-forward');
 const playSongButtons = document.querySelectorAll('.js-play-song');
+
 
 playSongButtons.forEach((button) => {
   button.addEventListener('click', async () => {
@@ -100,6 +101,8 @@ forwardButton.addEventListener('click', async () => {
   }
 });
 
+
+
 async function playNewSong(song) {
   if (audio1) {
     audio1.pause();
@@ -138,14 +141,33 @@ window.addEventListener('DOMContentLoaded', async () => {
     const song = queue[index];
     audio1 = new Audio(song.audio);
     getTime(audio1);
-     
-  // Add event listeners for time updates
-  audio1.addEventListener('timeupdate', () => updateTimeDisplay(audio1));
-  audio1.addEventListener('loadedmetadata', () => updateTimeDisplay(audio1));
-  
+
+    audio1.addEventListener('timeupdate', () => updateTimeDisplay(audio1));
+    audio1.addEventListener('loadedmetadata', () => updateTimeDisplay(audio1));
+
     isPlaying = false;
     updatePlayPauseButton(false);
     updateSongInfo(song);
     console.log(`Loaded from localStorage: ${song.songName}`);
   }
+
+  // Seek by clicking progress bar
+  const progressBarContainer = document.querySelector('.js-progress-bar');
+  progressBarContainer.addEventListener('click', (event) => {
+    if (!audio1 || !audio1.duration) return;
+
+    const rect = progressBarContainer.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const width = rect.width;
+
+    const clickRatio = clickX / width;
+    const newTime = audio1.duration * clickRatio;
+
+    audio1.currentTime = newTime;
+    updateTimeDisplay(audio1);
+  });
+
+  //  Volume control
+  changeVolume(audio1);
+
 });
