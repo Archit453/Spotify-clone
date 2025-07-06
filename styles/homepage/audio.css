@@ -125,6 +125,7 @@ i:hover{
     width: 30%;
     border-radius: 10px;
     background-color: var(--secondary-color);
+    transition: width 0.2s ease;
 }
 .progress-bar:hover .progress{
     background-color: var(--green-color);

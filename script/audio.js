@@ -1,6 +1,10 @@
 import { trendingSong } from "../data/trendingSongs.js";
 import {updateAudioQueue,getAudioQueue,getCurrentIndex,setCurrentIndex} from "../data/songQueue.js";
 import { updateSongInfo } from "./updateSongAtInfo.js";
+import {getTime,updateTimeDisplay} from "./progressbar.js";
+
+
+
 
 let audio1 = null;
 let isPlaying = false;
@@ -27,6 +31,12 @@ playSongButtons.forEach((button) => {
     }
 
     audio1 = new Audio(playSong.audio);
+    getTime(audio1);
+    
+    // Add event listeners for time updates
+    audio1.addEventListener('timeupdate', () => updateTimeDisplay(audio1));
+    audio1.addEventListener('loadedmetadata', () => updateTimeDisplay(audio1));
+    
     isPlaying = true;
 
     try {
@@ -40,7 +50,6 @@ playSongButtons.forEach((button) => {
     }
   });
 });
-
 playPause.addEventListener('click', async () => {
   if (!audio1) return;
 
@@ -98,6 +107,12 @@ async function playNewSong(song) {
   }
 
   audio1 = new Audio(song.audio);
+  getTime(audio1);
+   
+  // Add event listeners for time updates
+  audio1.addEventListener('timeupdate', () => updateTimeDisplay(audio1));
+  audio1.addEventListener('loadedmetadata', () => updateTimeDisplay(audio1));
+  
   isPlaying = true;
 
   try {
@@ -122,6 +137,12 @@ window.addEventListener('DOMContentLoaded', async () => {
   if (queue.length > 0 && queue[index]) {
     const song = queue[index];
     audio1 = new Audio(song.audio);
+    getTime(audio1);
+     
+  // Add event listeners for time updates
+  audio1.addEventListener('timeupdate', () => updateTimeDisplay(audio1));
+  audio1.addEventListener('loadedmetadata', () => updateTimeDisplay(audio1));
+  
     isPlaying = false;
     updatePlayPauseButton(false);
     updateSongInfo(song);
